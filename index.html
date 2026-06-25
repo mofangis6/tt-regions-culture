@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>土耳其/欧洲/巴基斯坦本地化参考 · TikTok Video Wall</title>
   <script>
-    document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';
   </script>
   <style>
     :root {
@@ -4987,7 +4987,7 @@
       themeToggle.setAttribute('aria-pressed', String(isLight));
     }
 
-    setTheme(document.documentElement.dataset.theme || 'dark');
+    setTheme(document.documentElement.dataset.theme || 'light');
     themeToggle.addEventListener('click', () => {
       const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
       setTheme(nextTheme);
