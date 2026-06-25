@@ -4,6 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>土耳其/欧洲/巴基斯坦本地化参考 · TikTok Video Wall</title>
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';
+  </script>
   <style>
     :root {
       color-scheme: dark;
@@ -19,6 +22,20 @@
       --accent-2: #bef264;
       --shadow: 0 20px 55px rgba(0,0,0,.36);
     }
+    html[data-theme="light"] {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --panel-2: #f8fafc;
+      --panel-3: #eef3f8;
+      --text: #111827;
+      --muted: #667085;
+      --soft: #344054;
+      --line: rgba(15,23,42,.12);
+      --accent: #0891b2;
+      --accent-2: #65a30d;
+      --shadow: 0 18px 42px rgba(15,23,42,.12);
+    }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -30,6 +47,12 @@
       color: var(--text);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       letter-spacing: 0;
+    }
+    html[data-theme="light"] body {
+      background:
+        radial-gradient(circle at 16% -8%, rgba(8,145,178,.14), transparent 28rem),
+        radial-gradient(circle at 92% 8%, rgba(101,163,13,.10), transparent 24rem),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 46rem);
     }
     a { color: inherit; }
     .shell {
@@ -99,6 +122,7 @@
       padding: 18px;
       box-shadow: var(--shadow);
     }
+    html[data-theme="light"] .hero-panel { background: rgba(255,255,255,.76); }
     .stat-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -110,6 +134,7 @@
       padding: 12px;
       background: rgba(255,255,255,.04);
     }
+    html[data-theme="light"] .stat { background: rgba(255,255,255,.82); }
     .stat strong { display: block; font-size: 24px; color: var(--text); }
     .stat span { color: var(--muted); font-size: 12px; }
     .controls {
@@ -120,12 +145,31 @@
       backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--line);
     }
+    html[data-theme="light"] .controls { background: rgba(255,255,255,.86); }
+    .theme-row {
+      display: flex;
+      justify-content: flex-start;
+      padding: 14px 0 0;
+    }
+    .theme-toggle {
+      min-height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      padding: 0 12px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 680;
+    }
+    .theme-toggle:hover { border-color: rgba(34,211,238,.55); color: var(--accent); }
+    html[data-theme="light"] .theme-toggle { background: #fff; }
     .control-row {
       display: grid;
       grid-template-columns: minmax(230px, 440px) 1fr;
       gap: 14px;
       align-items: center;
-      padding: 14px 0;
+      padding: 12px 0 14px;
     }
     .search {
       width: 100%;
@@ -137,6 +181,7 @@
       font-size: 15px;
       outline: none;
     }
+    html[data-theme="light"] .search { background: #ffffff; }
     .search:focus {
       border-color: rgba(34,211,238,.68);
       box-shadow: 0 0 0 3px rgba(34,211,238,.11);
@@ -152,6 +197,7 @@
       cursor: pointer;
       font-size: 14px;
     }
+    html[data-theme="light"] .chip { background: #ffffff; }
     .chip.active {
       color: #061014;
       border-color: transparent;
@@ -174,6 +220,7 @@
       background: rgba(17,19,24,.7);
       padding: 10px;
     }
+    html[data-theme="light"] .toc { background: rgba(255,255,255,.82); }
     .toc-title {
       color: var(--muted);
       font-size: 12px;
@@ -193,6 +240,7 @@
       font-size: 13px;
       font-weight: 650;
     }
+    html[data-theme="light"] .region-link { background: rgba(15,23,42,.04); }
     .topic-links { padding: 5px 0 8px 4px; }
     .topic-link {
       padding: 6px 8px;
@@ -209,6 +257,7 @@
       background: rgba(13,16,21,.66);
       overflow: hidden;
     }
+    html[data-theme="light"] .region-section { background: rgba(255,255,255,.82); }
     .region-heading {
       display: flex;
       align-items: center;
@@ -249,6 +298,7 @@
       background: linear-gradient(180deg, rgba(255,90,102,.10), rgba(17,19,24,.72));
       padding: 16px 18px;
     }
+    html[data-theme="light"] .risk-card { background: linear-gradient(180deg, rgba(255,90,102,.10), rgba(255,255,255,.9)); }
     .risk-card h3 {
       margin: 0 0 10px;
       color: #ff5a66;
@@ -311,6 +361,11 @@
       line-height: 1.25;
       font-weight: 650;
     }
+    html[data-theme="light"] .topic-hover-note {
+      border-color: rgba(30,64,175,.28);
+      background: rgba(30,64,175,.08);
+      color: #1e3a8a;
+    }
     .topic-summary {
       color: var(--soft);
       max-width: 920px;
@@ -334,6 +389,7 @@
       background: linear-gradient(180deg, var(--panel-2), var(--panel));
       box-shadow: var(--shadow);
     }
+    html[data-theme="light"] .video-card { background: linear-gradient(180deg, #ffffff, #f8fafc); }
     .embed-shell {
       --embed-scale: .56;
       --embed-height: 410px;
@@ -393,7 +449,7 @@
       gap: 8px;
     }
     .standby-hashtag {
-      color: var(--text);
+      color: #ffffff;
       font-size: clamp(18px, 1.5vw, 24px);
       line-height: 1.05;
       font-weight: 820;
@@ -462,6 +518,7 @@
       background: rgba(255,255,255,.04);
       white-space: nowrap;
     }
+    html[data-theme="light"] .card-actions a { background: rgba(15,23,42,.04); }
     .video-note {
       height: 96px;
       overflow-y: auto;
@@ -501,6 +558,7 @@
       color: var(--muted);
       background: rgba(17,19,24,.7);
     }
+    html[data-theme="light"] .unmatched { background: rgba(255,255,255,.82); }
     .unmatched summary { cursor: pointer; color: var(--text); }
     .unmatched ul { columns: 2; padding-left: 20px; }
     .is-hidden { display: none !important; }
@@ -558,6 +616,9 @@
     </div>
   </section>
   <section class="controls">
+    <div class="shell theme-row">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">浅色模式</button>
+    </div>
     <div class="shell control-row">
       <input class="search" id="search" placeholder="搜索 hashtag、区域、内容点" />
       <div class="chips" id="chips"><button class="chip active" data-region="全部">全部</button>
@@ -4915,7 +4976,22 @@
     const regions = [...document.querySelectorAll('.region-section')];
     const shownCount = document.getElementById('shownCount');
     const empty = document.getElementById('empty');
+    const themeToggle = document.getElementById('themeToggle');
     let activeRegion = '全部';
+
+    function setTheme(mode) {
+      document.documentElement.dataset.theme = mode;
+      localStorage.setItem('theme', mode);
+      const isLight = mode === 'light';
+      themeToggle.textContent = isLight ? '深色模式' : '浅色模式';
+      themeToggle.setAttribute('aria-pressed', String(isLight));
+    }
+
+    setTheme(document.documentElement.dataset.theme || 'dark');
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      setTheme(nextTheme);
+    });
 
     function applyFilters() {
       const query = search.value.trim().toLocaleLowerCase();
