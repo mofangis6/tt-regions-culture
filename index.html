@@ -551,16 +551,6 @@
       color: var(--muted);
       background: var(--panel);
     }
-    .unmatched {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 18px 22px;
-      color: var(--muted);
-      background: rgba(17,19,24,.7);
-    }
-    html[data-theme="light"] .unmatched { background: rgba(255,255,255,.82); }
-    .unmatched summary { cursor: pointer; color: var(--text); }
-    .unmatched ul { columns: 2; padding-left: 20px; }
     .is-hidden { display: none !important; }
     @media (max-width: 1180px) {
       .video-masonry { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -588,7 +578,6 @@
       .video-masonry { grid-template-columns: 1fr; }
       .embed-shell { --embed-scale: .80; --embed-height: 620px; }
       .stat-row { grid-template-columns: 1fr; }
-      .unmatched ul { columns: 1; }
     }
   </style>
 </head>
@@ -4959,13 +4948,6 @@
                 
             </section>
             
-      <details class="unmatched">
-        <summary>未匹配 hashtag（4）</summary>
-        <ul><li>#lafsokmalıstory</li>
-<li>#ryanairromance</li>
-<li>#storyatmak</li>
-<li>#storybakmak</li></ul>
-      </details>
     </div>
   </main>
   <script>
